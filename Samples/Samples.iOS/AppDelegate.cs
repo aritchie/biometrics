@@ -13,7 +13,6 @@ namespace Samples.iOS {
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options) {
             Forms.Init();
-            Biometrics.Init();
             this.LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

@@ -4,20 +4,20 @@
 namespace Acr.Biometrics {
 
     public static class Biometrics {
-        public static IBiometrics Instance { get; set; }
 
+        private static readonly Lazy<IBiometrics> instanceInit = new Lazy<IBiometrics>(() => {
 #if __PLATFORM__
-
-        public static void Init() {
-            if (Instance == null)
-                Instance = new BiometricsImpl();
-        }
+            return new BiometricsImpl();
 #else
-
-        [Obsolete("ERROR: You are calling the PCL version of Init")]
-        public static void Init() {
-            throw new ArgumentException("You are calling the PCL version of Init");
-        }
+            throw new ArgumentException("No platform plugin found.  Did you install the nuget package in your app project as well?");
 #endif
+        }, false);
+
+
+        private static IBiometrics customInstance;
+        public static IBiometrics Instance {
+            get { return customInstance ?? instanceInit.Value; }
+            set { customInstance = value; }
+        }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using Acr.Biometrics;
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
@@ -16,9 +15,7 @@ namespace Samples.Droid {
             base.OnCreate(bundle);
 
             Forms.Init(this, bundle);
-            Biometrics.Init();
             this.LoadApplication(new App());
         }
     }
 }
-

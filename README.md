@@ -1,9 +1,7 @@
 ACR Biometrics (Fingerprint Sensor) For Xamarin (iOS & Android)
 ===
 
-Make sure to initialize in your platform (Main activity or AppDelegate):
-
-    Biometrics.Init();
+Make sure to include the nuget package in your app projects as well as your shared/PCL library
 
 For Android only, please add the following to your AndroidManifest.xml
 
