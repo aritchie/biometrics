@@ -31,6 +31,7 @@ namespace Acr.Biometrics {
             }
             catch (SecurityException ex) {
                 Debug.WriteLine("Invalid App Permissions: " + ex);
+                //<uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY" />
             }
         }
 
@@ -43,7 +44,8 @@ namespace Acr.Biometrics {
                 return false;
 
             this.waitLock = new TaskCompletionSource<bool>();
-            this.fingerprint.StartIdentify(this);
+            //this.fingerprint.StartIdentify(this);
+            this.fingerprint.StartIdentifyWithDialog(Application.Context, this, true);
             var result = await this.waitLock.Task;
             this.waitLock = null;
             return result;
