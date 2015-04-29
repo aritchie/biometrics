@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.Biometrics</id>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
         <title>ACR Biometrics Plugin for Xamarin</title>
         <description>Biometrics (fingerprint) service for iOS and Android</description>
         <authors>Allan Ritchie</authors>
@@ -27,6 +27,7 @@ Initial Release
 
         <!-- android -->
         <file src="..\Acr.Biometrics.Droid\bin\Release\Acr.Biometrics.dll" target="lib\MonoAndroid10\Acr.Biometrics.dll" />
+        <file src="..\Acr.Biometrics.Droid\bin\Release\SamsungPass.dll" target="lib\MonoAndroid10\SamsungPass.dll" />
 
         <!-- ios -->
         <file src="..\Acr.Biometrics.iOS\bin\iPhone\Release\Acr.Biometrics.dll" target="lib\Xamarin.iOS10\Acr.Biometrics.dll" />
