@@ -7,9 +7,7 @@ using LocalAuthentication;
 namespace Acr.Biometrics {
 
     public class BiometricsImpl : IBiometrics {
-
 		private readonly LAContext context;
-		private TaskCompletionSource<bool> waitState;
 
 
 		public BiometricsImpl() {
