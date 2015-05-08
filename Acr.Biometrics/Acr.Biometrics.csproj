@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VoidBiometricImpl.cs" />
   </ItemGroup>
   <Import Project="..\Acr.Biometrics.Shared\Acr.Biometrics.Shared.projitems" Label="Shared" Condition="Exists('..\Acr.Biometrics.Shared\Acr.Biometrics.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
