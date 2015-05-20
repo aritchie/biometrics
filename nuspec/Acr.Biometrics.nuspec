@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.Biometrics</id>
-        <version>1.0.2</version>
+        <version>1.0.3</version>
         <title>ACR Biometrics Plugin for Xamarin</title>
         <description>Biometrics (fingerprint) service for iOS and Android</description>
         <authors>Allan Ritchie</authors>
@@ -12,7 +12,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <tags>beacons windows xamarin xam.pcl</tags>
         <releaseNotes>
-Init is no longer necessary in your platform project
+Update nuspec to profile 259 PCL
         </releaseNotes>
         <dependencies>
             <group targetFramework="MonoAndroid">
@@ -22,7 +22,7 @@ Init is no longer necessary in your platform project
     </metadata>
     <files>
         <!-- PCL -->
-        <file src="..\Acr.Biometrics\bin\Release\Acr.Biometrics.dll" target="lib\portable-net45+win+wp80+MonoTouch10+MonoAndroid10+xamarinmac20+xamarinios10\Acr.Biometrics.dll" />
+        <file src="..\Acr.Biometrics\bin\Release\Acr.Biometrics.dll" target="lib\portable-win+net45+wp8+win8+wpa81\Acr.Biometrics.dll" />
 
         <!-- android -->
         <file src="..\Acr.Biometrics.Droid\bin\Release\Acr.Biometrics.dll" target="lib\MonoAndroid10\Acr.Biometrics.dll" />
