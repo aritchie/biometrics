@@ -6,10 +6,10 @@ namespace Acr.Biometrics {
     public static class Biometrics {
 
         private static readonly Lazy<IBiometrics> instanceInit = new Lazy<IBiometrics>(() => {
-#if __PLATFORM__
-            return new BiometricsImpl();
-#else
+#if PCL
             throw new ArgumentException("No platform plugin found.  Did you install the nuget package in your app project as well?");
+#else
+            return new BiometricsImpl();
 #endif
         }, false);
 

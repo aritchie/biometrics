@@ -7,21 +7,26 @@ using LocalAuthentication;
 namespace Acr.Biometrics {
 
     public class BiometricsImpl : IBiometrics {
-		private readonly LAContext context;
+		readonly LAContext context;
+        readonly Lazy<bool> available;
 
 
 		public BiometricsImpl() {
 			this.context = new LAContext();
-			NSError _;
-			this.IsAvailable = this.context.CanEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, out _);
+            this.available = new Lazy<bool>(() => {
+    			NSError _;
+	    		return this.context.CanEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, out _);
+            });
 		}
 
 
-		public bool IsAvailable { get; private set; }
+        public Task<bool> IsAvailable() {
+            return Task.FromResult(this.available.Value);
+        }
 
 
 		public async Task<bool> Evaluate(string message) {
-			if (!this.IsAvailable)
+			if (!this.available.Value)
 				return false;
 
 			var result = await this.context.EvaluatePolicyAsync(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, message);

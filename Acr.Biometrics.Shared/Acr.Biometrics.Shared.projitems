@@ -9,7 +9,7 @@
     <Import_RootNamespace>Acr.Biometrics</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AssemblyInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Biometrics.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IBiometrics.cs" />
   </ItemGroup>
 </Project>

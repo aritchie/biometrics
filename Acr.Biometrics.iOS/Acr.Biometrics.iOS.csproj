@@ -39,6 +39,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Acr.Biometrics.Interface\Acr.Biometrics.Interface.csproj">
+      <Project>{fa0c88ab-2c21-42bc-89bc-2fbfd7404394}</Project>
+      <Name>Acr.Biometrics.Interface</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
