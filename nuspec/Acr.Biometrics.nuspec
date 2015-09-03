@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.Biometrics</id>
-        <version>1.0.3</version>
+        <version>2.0.0</version>
         <title>ACR Biometrics Plugin for Xamarin</title>
         <description>Biometrics (fingerprint) service for iOS and Android</description>
         <authors>Allan Ritchie</authors>
@@ -12,7 +12,9 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <tags>beacons windows xamarin xam.pcl</tags>
         <releaseNotes>
-Update nuspec to profile 259 PCL
+[BREAKING][design] IsAvailable is now async request (thanks UWP for this :P )
+[feature] UWP support
+[design] Improved library design
         </releaseNotes>
         <dependencies>
             <group targetFramework="MonoAndroid">
@@ -26,9 +28,17 @@ Update nuspec to profile 259 PCL
 
         <!-- android -->
         <file src="..\Acr.Biometrics.Droid\bin\Release\Acr.Biometrics.dll" target="lib\MonoAndroid10\Acr.Biometrics.dll" />
+        <file src="..\Acr.Biometrics.Droid\bin\Release\Acr.Biometrics.Interface.dll" target="lib\MonoAndroid10\Acr.Biometrics.Interface.dll" />
         <file src="..\Acr.Biometrics.Droid\bin\Release\SamsungPass.dll" target="lib\MonoAndroid10\SamsungPass.dll" />
 
         <!-- ios -->
         <file src="..\Acr.Biometrics.iOS\bin\iPhone\Release\Acr.Biometrics.dll" target="lib\Xamarin.iOS10\Acr.Biometrics.dll" />
+        <file src="..\Acr.Biometrics.iOS\bin\iPhone\Release\Acr.Biometrics.Interface.dll" target="lib\Xamarin.iOS10\Acr.Biometrics.Interface.dll" />
+
+        <!-- uwp -->
+        <file src="..\Acr.Biometrics.Uwp\bin\Release\Acr.Biometrics.dll" target="lib\uap10.0\Acr.Biometrics.dll" />
+        <file src="..\Acr.Biometrics.Uwp\bin\Release\Acr.Biometrics.Interface.dll" target="lib\uap10.0\Acr.Biometrics.Interface.dll" />
+        <file src="..\Acr.Biometrics.Uwp\Properties\Acr.Biometrics.Uwp.rd.xml" target="lib\uap10.0\Acr.Biometrics.Uwp.rd.xml" />
+
     </files>
 </package>

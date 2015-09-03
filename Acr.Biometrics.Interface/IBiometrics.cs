@@ -6,7 +6,7 @@ namespace Acr.Biometrics {
 
     public interface IBiometrics {
 
-        bool IsAvailable { get; }
+        Task<bool> IsAvailable();
         Task<bool> Evaluate(string message);
     }
 }

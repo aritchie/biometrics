@@ -1,4 +1,4 @@
 ﻿using System.Reflection;
 
-[assembly: AssemblyTitle("Acr.Biometrics.Droid")]
+[assembly: AssemblyTitle("Acr.Biometrics.Uwp")]
 [assembly: AssemblyDescription("")]

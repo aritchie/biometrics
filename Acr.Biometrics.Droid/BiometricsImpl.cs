@@ -10,8 +10,10 @@ using Java.Lang;
 namespace Acr.Biometrics {
 
     public class BiometricsImpl : Java.Lang.Object, IBiometrics, IIdentifyListener, IRegisterListener {
-        private readonly SpassFingerprint fingerprint;
-        private TaskCompletionSource<bool> waitLock;
+        readonly SpassFingerprint fingerprint;
+        readonly bool available;
+        TaskCompletionSource<bool> waitLock;
+
 
         public BiometricsImpl() {
             var spass = new Spass();
@@ -20,7 +22,7 @@ namespace Acr.Biometrics {
                 spass.Initialize(Application.Context);
                 if (spass.IsFeatureEnabled(Spass.DeviceFingerprint)) {
                     this.fingerprint = new SpassFingerprint(Application.Context);
-                    this.IsAvailable = this.fingerprint.HasRegisteredFinger;
+                    this.available = this.fingerprint.HasRegisteredFinger;
                 }
             }
             catch (SsdkUnsupportedException ex) {
@@ -36,11 +38,13 @@ namespace Acr.Biometrics {
         }
 
 
-        public bool IsAvailable { get; private set; }
+        public Task<bool> IsAvailable() {
+            return Task.FromResult(this.available);
+        }
 
 
         public async Task<bool> Evaluate(string message) {
-            if (!this.IsAvailable)
+            if (!this.available)
                 return false;
 
             this.waitLock = new TaskCompletionSource<bool>();
@@ -57,12 +61,13 @@ namespace Acr.Biometrics {
             var valid = (responseCode == SpassFingerprint.StatusAuthentificationSuccess);
             var name = GetResponseStatusName(responseCode);
             Debug.WriteLine("FingerPrint Response: " + name);
-            if (this.waitLock != null)
-                this.waitLock.TrySetResult(valid);
+            this.waitLock?.TrySetResult(valid);
         }
+
 
         public void OnReady() {
         }
+
 
         public void OnStarted() {
         }
@@ -76,7 +81,9 @@ namespace Acr.Biometrics {
 
         #endregion
 
-        private static string GetResponseStatusName(int responseCode) {
+        #region Internals
+
+        static string GetResponseStatusName(int responseCode) {
 			if (responseCode == SpassFingerprint.StatusAuthentificationSuccess)
 				return "STATUS_AUTHENTIFICATION_SUCCESS";
 
@@ -100,5 +107,7 @@ namespace Acr.Biometrics {
 
             return "STATUS_AUTHENTIFICATION_FAILED";
         }
+
+        #endregion
     }
 }

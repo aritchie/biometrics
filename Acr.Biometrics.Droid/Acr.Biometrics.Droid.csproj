@@ -51,6 +51,10 @@
     <AndroidResource Include="Resources\Values\Strings.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Acr.Biometrics.Interface\Acr.Biometrics.Interface.csproj">
+      <Project>{fa0c88ab-2c21-42bc-89bc-2fbfd7404394}</Project>
+      <Name>Acr.Biometrics.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SamsungPass\SamsungPass.csproj">
       <Project>{3a4b8e88-fa9b-4663-bcda-21c12e3af98a}</Project>
       <Name>SamsungPass</Name>
