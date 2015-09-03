@@ -35,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="MainPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -49,6 +50,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Acr.Biometrics.Interface\Acr.Biometrics.Interface.csproj">
+      <Project>{fa0c88ab-2c21-42bc-89bc-2fbfd7404394}</Project>
+      <Name>Acr.Biometrics.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Acr.Biometrics\Acr.Biometrics.csproj">
       <Project>{4f51d114-8bf5-43ba-b17f-c119d6f3cd1c}</Project>
       <Name>Acr.Biometrics</Name>

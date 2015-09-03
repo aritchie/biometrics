@@ -93,6 +93,10 @@
       <Project>{2b743718-943b-45c3-9fb7-72b2667cd48c}</Project>
       <Name>Acr.Biometrics.Droid</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Acr.Biometrics.Interface\Acr.Biometrics.Interface.csproj">
+      <Project>{fa0c88ab-2c21-42bc-89bc-2fbfd7404394}</Project>
+      <Name>Acr.Biometrics.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Samples\Samples.csproj">
       <Name>Samples</Name>
     </ProjectReference>

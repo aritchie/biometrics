@@ -14,7 +14,7 @@ namespace Acr.Biometrics {
         }, false);
 
 
-        private static IBiometrics customInstance;
+        static IBiometrics customInstance;
         public static IBiometrics Instance {
             get { return customInstance ?? instanceInit.Value; }
             set { customInstance = value; }

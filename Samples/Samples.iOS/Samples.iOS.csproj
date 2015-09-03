@@ -99,6 +99,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Acr.Biometrics.Interface\Acr.Biometrics.Interface.csproj">
+      <Project>{fa0c88ab-2c21-42bc-89bc-2fbfd7404394}</Project>
+      <Name>Acr.Biometrics.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Acr.Biometrics.iOS\Acr.Biometrics.iOS.csproj">
       <Project>{7fbf1544-7dd8-4812-86b7-1f98537e593f}</Project>
       <Name>Acr.Biometrics.iOS</Name>
