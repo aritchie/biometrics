@@ -187,3 +187,6 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+/Acr.Biometrics.Uwp/project.lock.json
+/Samples.Uwp/project.lock.json
+/.vs/config/applicationhost.config

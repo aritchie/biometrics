@@ -2,7 +2,6 @@
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Android.App;
-using Android.Content;
 using Com.Samsung.Android.Sdk;
 using Com.Samsung.Android.Sdk.Pass;
 using Java.Lang;
@@ -20,8 +19,6 @@ namespace Acr.Biometrics {
             var spass = new Spass();
 
             try {
-                Application.Context.StartService(new Intent("com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY"));
-
                 spass.Initialize(Application.Context);
                 if (spass.IsFeatureEnabled(Spass.DeviceFingerprint)) {
                     this.fingerprint = new SpassFingerprint(Application.Context);
