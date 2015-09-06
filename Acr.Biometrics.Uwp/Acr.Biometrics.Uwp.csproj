@@ -115,7 +115,7 @@
   <ItemGroup>
     <Compile Include="BiometricsImpl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="Properties\Acr.Biometrics.Uwp.rd.xml" />
+    <TransformFile Include="Properties\Acr.Biometrics.rd.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Acr.Biometrics.Interface\Acr.Biometrics.Interface.csproj">
