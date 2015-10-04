@@ -28,6 +28,8 @@ namespace Samples.Droid
 		{
 			global::Acr.Biometrics.Resource.String.ApplicationName = global::Samples.Droid.Resource.String.ApplicationName;
 			global::Acr.Biometrics.Resource.String.Hello = global::Samples.Droid.Resource.String.Hello;
+			global::Xamarin.Forms.Platform.Resource.String.ApplicationName = global::Samples.Droid.Resource.String.ApplicationName;
+			global::Xamarin.Forms.Platform.Resource.String.Hello = global::Samples.Droid.Resource.String.Hello;
 		}
 		
 		public partial class Attribute

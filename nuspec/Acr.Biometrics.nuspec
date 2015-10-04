@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.Biometrics</id>
-        <version>2.0.2</version>
+        <version>2.0.3</version>
         <title>ACR Biometrics Plugin for Xamarin</title>
         <description>Biometrics (fingerprint) service for iOS and Android</description>
         <authors>Allan Ritchie</authors>
@@ -12,6 +12,9 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <tags>fingerprint biometrics windows xamarin xam.pcl</tags>
         <releaseNotes>
+2.0.3
+[update] android support library
+
 2.0.2
 [fix] nuget registration
 
@@ -25,7 +28,7 @@
         </releaseNotes>
         <dependencies>
             <group targetFramework="MonoAndroid">
-                <dependency id="Xamarin.Android.Support.v4" version="[22, 23)" />
+                <dependency id="Xamarin.Android.Support.v4" version="[23, 24)" />
             </group>
         </dependencies>
     </metadata>
