@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.Biometrics</id>
-        <version>3.0.0</version>
+        <version>3.0.0-beta1</version>
         <title>ACR Biometrics Plugin for Xamarin and Windows</title>
         <description>Fingerprint Biometrics Service for Xamarin and Windows</description>
         <authors>Allan Ritchie</authors>

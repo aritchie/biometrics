@@ -9,7 +9,7 @@ namespace Acr.Biometrics {
 #if PCL
             throw new ArgumentException("No platform plugin found.  Did you install the nuget package in your app project as well?");
 #else
-            return new SamsungBiometricsImpl();
+            return new BiometricsImpl();
 #endif
         }, false);
 
