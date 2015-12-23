@@ -5,24 +5,37 @@ using System.Threading.Tasks;
 namespace Acr.Biometrics {
 
     public class BiometricsImpl : IBiometrics {
-        readonly IBiometrics impl;
+        IBiometrics impl;
 
 
-        public BiometricsImpl() {
-            // if 6
-            this.impl = new MarshmallowBiometricsImpl();
-
-            // else samsung
+        public async Task<bool> IsAvailable() {
+            var bio = await this.GetAvailableImpl();
+            var result = await bio.IsAvailable();
+            return result;
         }
 
 
-        public Task<bool> IsAvailable() {
-            return this.impl.IsAvailable();
+        public async Task<bool> Evaluate(string message) {
+            var bio = await this.GetAvailableImpl();
+            var result = await bio.Evaluate(message);
+            return result;
         }
 
 
-        public Task<bool> Evaluate(string message) {
-            return this.impl.Evaluate(message);
+        protected virtual async Task<IBiometrics> GetAvailableImpl() {
+            if (this.impl != null)
+                return this.impl;
+
+            IBiometrics bio = new MarshmallowBiometricsImpl();
+            var result = await bio.IsAvailable();
+            if (!result) {
+                bio = new SamsungBiometricsImpl();
+                result = await bio.IsAvailable();
+                if (!result)
+                    bio = new VoidBiometricImpl();
+            }
+            this.impl = bio;
+            return this.impl;
         }
     }
 }

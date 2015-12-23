@@ -3,4 +3,5 @@
 	<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="21" />
 	<application android:label="Biometrics" android:icon="@drawable/icon"></application>
     <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
 </manifest>
