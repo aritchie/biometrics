@@ -1,3 +1,5 @@
+# This library is no longer supported. Please use https://www.nuget.org/packages/Plugin.Fingerprint/
+
 ACR Biometrics (Fingerprint Sensor) For Xamarin and Windows
 ===
 
